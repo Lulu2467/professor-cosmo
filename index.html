@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Gunther M. Roland - teaching and research hub. Powered by Symbion and Cosmo.">
+  <title>Gunther M. Roland - SYMBION - COSMO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=167">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
+      "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.15.0/index.js"
+    }
+  }
+  </script>
+</head>
+<body class="page-home">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Gunther Roland homepage">
+      <span class="brand-mark" aria-hidden="true"><img src="assets/symbion-mark.svg" width="28" height="28" alt=""></span>
+      <span class="brand-text">Gunther M. Roland</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html" class="active" data-nav>Home</a>
+      <a href="class.html" data-nav>Class</a>
+      <a href="research.html" data-nav>Research</a>
+    </nav>
+    <div class="topbar-actions">
+      <button type="button" class="symbion-btn" data-open-chat aria-controls="chatDrawer" aria-label="Open My Symbion">
+        <img class="symbion-face" src="assets/roland-twin/avatar.png?v=1" width="22" height="22" alt="">
+        <span>My Symbion</span>
+      </button>
+      <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <canvas class="hero-field" data-hero-field aria-hidden="true"></canvas>
+      <div class="hero-globe" data-hero-globe aria-hidden="true"></div>
+      <div class="hero-grid">
+        <div class="hero-stage" data-reveal>
+          <figure class="hero-figure" data-halftone>
+            <canvas class="hero-halftone" aria-hidden="true"></canvas>
+            <img src="assets/gunther-roland-supplied.jpg?v=3" alt="Portrait of Gunther M. Roland">
+          </figure>
+        </div>
+
+        <div class="hero-copy" data-reveal data-reveal-delay="1">
+          <p class="hero-greet">Hello. I am</p>
+          <h1>
+            <span class="line">Gunther</span>
+            <span class="line">M. Roland</span>
+          </h1>
+          <p class="hero-role">Professor of Physics at MIT.<br>Experimental nuclear and particle physics.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="class.html"><span>Enter Class</span></a>
+          </div>
+        </div>
+      </div>
+
+      <a class="hero-scroll" href="#timeline">
+        <span>Scroll to timeline</span>
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+          <path d="M3.5 6.5 8 11l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </section>
+
+    <section class="timeline" id="timeline" aria-label="Research timeline">
+      <div class="timeline-stage" data-ice-canvas></div>
+
+      <ol class="timeline-index" data-ice-list aria-label="Milestones">
+        <li>Charged Multiplicity</li>
+        <li>Antiparticle Ratios</li>
+        <li>Kaon Fluctuations</li>
+        <li>Long-Range Ridge</li>
+        <li>Lead Ions at CMS</li>
+        <li>Dijet Imbalance</li>
+        <li>Collectivity in pp</li>
+        <li>Z + Jet Correlations</li>
+        <li>sPHENIX at RHIC</li>
+        <li>Z Boson Medium Probe</li>
+        <li>Au+Au Multiplicity</li>
+        <li>HL-LHC Trigger Tools</li>
+      </ol>
+
+      <div class="timeline-meta" data-ice-meta="left" aria-hidden="true">
+        <span data-ice-goo>
+          <span data-ice-layer><span><span></span><span></span></span></span>
+          <span data-ice-layer><span><span></span><span></span></span></span>
+        </span>
+        <span data-ice-plain><span><span></span><span></span></span></span>
+      </div>
+      <div class="timeline-meta right" data-ice-meta="right" aria-hidden="true">
+        <span data-ice-goo>
+          <span data-ice-layer><span><span></span><span></span></span></span>
+          <span data-ice-layer><span><span></span><span></span></span></span>
+        </span>
+        <span data-ice-plain><span><span></span><span></span></span></span>
+      </div>
+
+      <div class="timeline-loader" data-ice-loader aria-hidden="true">000</div>
+      <div class="sr-only" data-ice-live aria-live="polite"></div>
+      <p class="timeline-hint">Scroll or drag the ring. Click a card to open the paper.</p>
+
+      <div class="timeline-fallback" data-ice-fallback>
+        <p class="eyebrow">Research timeline</p>
+        <h2>Selected milestones</h2>
+        <ol>
+          <li><b>2000</b> <a href="https://doi.org/10.1103/PhysRevLett.85.3100" target="_blank" rel="noopener">Charged Multiplicity / PHOBOS</a></li>
+          <li><b>2001</b> <a href="https://doi.org/10.1103/PhysRevLett.87.102301" target="_blank" rel="noopener">Antiparticle Ratios / PHOBOS</a></li>
+          <li><b>2001</b> <a href="https://doi.org/10.1103/PhysRevLett.86.1965" target="_blank" rel="noopener">Kaon Fluctuations / NA49</a></li>
+          <li><b>2010</b> <a href="https://doi.org/10.1103/PhysRevLett.104.062301" target="_blank" rel="noopener">Long-Range Ridge / PHOBOS</a></li>
+          <li><b>2011</b> <a href="https://physics.mit.edu/faculty/gunther-roland/" target="_blank" rel="noopener">Lead Ions at CMS</a></li>
+          <li><b>2012</b> <a href="https://doi.org/10.1016/j.physletb.2012.04.058" target="_blank" rel="noopener">Dijet Imbalance / CMS</a></li>
+          <li><b>2017</b> <a href="https://doi.org/10.1016/j.physletb.2016.12.009" target="_blank" rel="noopener">Collectivity in pp / CMS</a></li>
+          <li><b>2017</b> <a href="https://doi.org/10.1103/PhysRevLett.119.082301" target="_blank" rel="noopener">Z + Jet Correlations / CMS</a></li>
+          <li><b>2019</b> <a href="https://doi.org/10.22323/1.345.0013" target="_blank" rel="noopener">sPHENIX at RHIC</a></li>
+          <li><b>2021</b> <a href="https://doi.org/10.1103/PhysRevLett.128.122301" target="_blank" rel="noopener">Z Boson Medium Probe / CMS</a></li>
+          <li><b>2025</b> <a href="https://arxiv.org/abs/2504.02240" target="_blank" rel="noopener">Au+Au Multiplicity / sPHENIX</a></li>
+          <li><b>Now</b> <a href="https://physics.mit.edu/faculty/gunther-roland/" target="_blank" rel="noopener">HL-LHC Trigger Tools</a></li>
+        </ol>
+      </div>
+
+      <svg aria-hidden="true" class="timeline-svg" focusable="false">
+        <defs>
+          <filter id="iceNameGoo" x="-20%" y="-100%" width="140%" height="300%" color-interpolation-filters="sRGB">
+            <feColorMatrix
+              data-ice-cut
+              in="SourceGraphic"
+              type="matrix"
+              values="1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 255 -140"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </section>
+  </main>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+  <aside class="drawer twin-drawer" id="chatDrawer" aria-labelledby="chatTitle" aria-hidden="true">
+    <div class="twin-nav">
+      <button type="button" class="twin-back" id="closeChat" aria-label="Back to page">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10.5 3.5 6 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Back</span>
+      </button>
+    </div>
+
+    <header class="twin-head" aria-label="Digital twin identity">
+      <div class="twin-avatar-wrap" data-twin-status="ready">
+        <img class="twin-avatar" src="assets/roland-twin/avatar.png?v=1" width="64" height="64" alt="Gunther Roland digital twin">
+        <span class="twin-status-dot" aria-hidden="true"></span>
+      </div>
+      <div class="twin-head-copy">
+        <h2 id="chatTitle">Gunther Roland</h2>
+        <p class="twin-sub">Digital Twin · MIT Physics</p>
+        <p class="twin-status-text" data-twin-status-text>Online &amp; Ready</p>
+      </div>
+    </header>
+
+    <div class="twin-body">
+      <div class="twin-chat">
+        <div class="messages" id="messages" aria-live="polite">
+          <div class="msg ai">
+            <span class="msg-who">Gunther Roland</span>
+            <div class="bubble"><p>Hello, I'm Gunther's digital twin. Feel free to ask me questions about this course, lecture slides and assigned readings.</p></div>
+          </div>
+        </div>
+
+        <div class="twin-compose">
+          <div class="suggest-chips" role="group" aria-label="Suggested questions">
+            <button type="button" class="suggest-chip" data-suggest="Explain this lecture concept">Explain this lecture concept</button>
+            <button type="button" class="suggest-chip" data-suggest="Help me understand the reading">Help me understand the reading</button>
+            <button type="button" class="suggest-chip" data-suggest="Clarify assignment requirements">Clarify assignment requirements</button>
+          </div>
+          <form id="chatForm" class="composer">
+            <div class="attach-chips" id="attachChips" hidden></div>
+            <div class="composer-box">
+              <label class="sr-only" for="chatInput">Ask Gunther</label>
+              <textarea id="chatInput" rows="2" placeholder="Ask Gunther about this course, readings or lecture content..."></textarea>
+              <div class="composer-bar">
+                <div class="composer-tools">
+                  <label class="attach-btn" title="Attach file">
+                    <input type="file" id="attachFile" accept="image/*,.pdf,.txt,.doc,.docx,.csv,.png,.jpg,.jpeg,.webp">
+                    <svg viewBox="0 0 1024 1024" width="20" height="20" aria-hidden="true">
+                      <path class="attach-ring" fill="currentColor" d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0zm0 972.8C256 972.8 51.2 768 51.2 512S256 51.2 512 51.2 972.8 256 972.8 512 768 972.8 512 972.8z"/>
+                      <path fill="currentColor" d="M774.4 486.4H537.6V249.6c0-12.8-12.8-25.6-25.6-25.6S486.4 236.8 486.4 249.6v236.8H249.6C236.8 486.4 224 499.2 224 512c0 12.8 12.8 25.6 25.6 25.6h236.8v236.8c0 12.8 12.8 25.6 25.6 25.6s25.6-12.8 25.6-25.6V537.6h236.8c12.8 0 25.6-12.8 25.6-25.6 0-12.8-12.8-25.6-25.6-25.6z"/>
+                    </svg>
+                  </label>
+                </div>
+                <div class="composer-actions">
+                  <button type="button" class="mic-btn" title="Voice input (coming soon)" aria-label="Voice input coming soon" disabled>
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2z"/></svg>
+                  </button>
+                  <button type="submit" class="send-btn">Send</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="twin-powered">Powered by Symbion</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+<div class="toast" id="joinToast" hidden role="status" aria-live="polite"></div>
+  <script src="app.js?v=87"></script>
+  <script src="hero-field.js?v=6"></script>
+  <script src="hero-globe.js?v=3"></script>
+  <script src="halftone-hero.js?v=6"></script>
+  <script type="module" src="ice-ring/mount.js?v=99"></script>
+</body>
+</html>

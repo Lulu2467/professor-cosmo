@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Research - Gunther M. Roland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=167">
+</head>
+<body class="page-research">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Gunther Roland homepage">
+      <span class="brand-mark" aria-hidden="true"><img src="assets/symbion-mark.svg" width="28" height="28" alt=""></span>
+      <span class="brand-text">Gunther M. Roland</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html" data-nav>Home</a>
+      <a href="class.html" data-nav>Class</a>
+      <a href="research.html" class="active" data-nav>Research</a>
+    </nav>
+    <div class="topbar-actions">
+      <button type="button" class="symbion-btn" data-open-chat aria-controls="chatDrawer" aria-label="Open My Symbion">
+        <img class="symbion-face" src="assets/roland-twin/avatar.png?v=1" width="22" height="22" alt="">
+        <span>My Symbion</span>
+      </button>
+      <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main" class="lab">
+    <header class="lab-head" data-reveal>
+      <h1>Research</h1>
+    </header>
+
+    <div class="research-split" data-reveal>
+      <section class="focus-panel" aria-labelledby="focusHeading">
+        <header class="focus-head">
+          <p class="panel-kicker">01 / Focus</p>
+          <h2 id="focusHeading">Research Focus</h2>
+        </header>
+        <div class="nebula-stage" data-nebula aria-label="Interactive research constellation">
+          <canvas class="nebula-canvas" aria-hidden="true"></canvas>
+          <div class="nebula-words" data-nebula-words role="list"></div>
+        </div>
+      </section>
+
+      <aside class="join-panel" aria-labelledby="joinHeading">
+        <header class="join-head">
+          <p class="panel-kicker">02 / Apply</p>
+          <h2 id="joinHeading">Join CIS</h2>
+        </header>
+        <p class="join-copy">Work with the group on heavy-ion collisions, jet quenching, and experimental analysis at RHIC and the LHC.</p>
+        <ul class="join-points">
+          <li>Online research track</li>
+          <li>Mentored project work</li>
+          <li>Open to motivated students</li>
+        </ul>
+        <div class="join-action">
+          <button type="button" class="btn primary join-cis" data-join="CIS Research Group">
+            <span>Join CIS Research Group</span>
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <section class="pub-block" data-reveal data-reveal-delay="1" aria-label="Selected publications">
+      <div class="lab-label"><span>Selected papers</span><i>Recent work</i></div>
+      <div class="pub-table-wrap">
+        <table class="pub-table">
+          <thead>
+            <tr>
+              <th scope="col">Tag</th>
+              <th scope="col">Title</th>
+              <th scope="col">Journal / Level</th>
+              <th scope="col">Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><em>PRL</em></td>
+              <td>Measurements of jet substructure in heavy-ion collisions at RHIC</td>
+              <td>Physical Review Letters (PRL)</td>
+              <td>2024</td>
+            </tr>
+            <tr>
+              <td><em>PLB</em></td>
+              <td>Energy loss of heavy quarks in quark-gluon plasma</td>
+              <td>Physics Letters B</td>
+              <td>2023</td>
+            </tr>
+            <tr>
+              <td><em>NIM</em></td>
+              <td>Data acquisition and analysis framework for sPHENIX experiment</td>
+              <td>Nuclear Instruments and Methods</td>
+              <td>2022</td>
+            </tr>
+            <tr>
+              <td><em>JHEP</em></td>
+              <td>Jet quenching measurements with the sPHENIX detector</td>
+              <td>Journal of High Energy Physics</td>
+              <td>2021</td>
+            </tr>
+            <tr>
+              <td><em>Book</em></td>
+              <td>Heavy Ion Physics at the LHC and RHIC</td>
+              <td>Annual Review of Nuclear and Particle Science</td>
+              <td>2020</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="lab-note">This page is an independent prototype, not an official MIT site. Timeline papers open from Home.</p>
+  </main>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+  <aside class="drawer twin-drawer" id="chatDrawer" aria-labelledby="chatTitle" aria-hidden="true">
+    <div class="twin-nav">
+      <button type="button" class="twin-back" id="closeChat" aria-label="Back to page">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10.5 3.5 6 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Back</span>
+      </button>
+    </div>
+
+    <header class="twin-head" aria-label="Digital twin identity">
+      <div class="twin-avatar-wrap" data-twin-status="ready">
+        <img class="twin-avatar" src="assets/roland-twin/avatar.png?v=1" width="64" height="64" alt="Gunther Roland digital twin">
+        <span class="twin-status-dot" aria-hidden="true"></span>
+      </div>
+      <div class="twin-head-copy">
+        <h2 id="chatTitle">Gunther Roland</h2>
+        <p class="twin-sub">Digital Twin · MIT Physics</p>
+        <p class="twin-status-text" data-twin-status-text>Online &amp; Ready</p>
+      </div>
+    </header>
+
+    <div class="twin-body">
+      <div class="twin-chat">
+        <div class="messages" id="messages" aria-live="polite">
+          <div class="msg ai">
+            <span class="msg-who">Gunther Roland</span>
+            <div class="bubble"><p>Hello, I'm Gunther's digital twin. Feel free to ask me questions about this course, lecture slides and assigned readings.</p></div>
+          </div>
+        </div>
+
+        <div class="twin-compose">
+          <div class="suggest-chips" role="group" aria-label="Suggested questions">
+            <button type="button" class="suggest-chip" data-suggest="Explain this lecture concept">Explain this lecture concept</button>
+            <button type="button" class="suggest-chip" data-suggest="Help me understand the reading">Help me understand the reading</button>
+            <button type="button" class="suggest-chip" data-suggest="Clarify assignment requirements">Clarify assignment requirements</button>
+          </div>
+          <form id="chatForm" class="composer">
+            <div class="attach-chips" id="attachChips" hidden></div>
+            <div class="composer-box">
+              <label class="sr-only" for="chatInput">Ask Gunther</label>
+              <textarea id="chatInput" rows="2" placeholder="Ask Gunther about this course, readings or lecture content..."></textarea>
+              <div class="composer-bar">
+                <div class="composer-tools">
+                  <label class="attach-btn" title="Attach file">
+                    <input type="file" id="attachFile" accept="image/*,.pdf,.txt,.doc,.docx,.csv,.png,.jpg,.jpeg,.webp">
+                    <svg viewBox="0 0 1024 1024" width="20" height="20" aria-hidden="true">
+                      <path class="attach-ring" fill="currentColor" d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0zm0 972.8C256 972.8 51.2 768 51.2 512S256 51.2 512 51.2 972.8 256 972.8 512 768 972.8 512 972.8z"/>
+                      <path fill="currentColor" d="M774.4 486.4H537.6V249.6c0-12.8-12.8-25.6-25.6-25.6S486.4 236.8 486.4 249.6v236.8H249.6C236.8 486.4 224 499.2 224 512c0 12.8 12.8 25.6 25.6 25.6h236.8v236.8c0 12.8 12.8 25.6 25.6 25.6s25.6-12.8 25.6-25.6V537.6h236.8c12.8 0 25.6-12.8 25.6-25.6 0-12.8-12.8-25.6-25.6-25.6z"/>
+                    </svg>
+                  </label>
+                </div>
+                <div class="composer-actions">
+                  <button type="button" class="mic-btn" title="Voice input (coming soon)" aria-label="Voice input coming soon" disabled>
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2z"/></svg>
+                  </button>
+                  <button type="submit" class="send-btn">Send</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="twin-powered">Powered by Symbion</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+<div class="toast" id="joinToast" hidden role="status" aria-live="polite"></div>
+  <script src="app.js?v=88"></script>
+  <script src="nebula-focus.js?v=9"></script>
+</body>
+</html>

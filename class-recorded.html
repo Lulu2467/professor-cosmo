@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Recorded class - Gunther M. Roland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=167">
+</head>
+<body class="page-class">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Gunther Roland homepage">
+      <span class="brand-mark" aria-hidden="true"><img src="assets/symbion-mark.svg" width="28" height="28" alt=""></span>
+      <span class="brand-text">Gunther M. Roland</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="index.html" data-nav>Home</a>
+      <a href="class.html" class="active" data-nav>Class</a>
+      <a href="research.html" data-nav>Research</a>
+    </nav>
+    <div class="topbar-actions">
+      <button type="button" class="symbion-btn" data-open-chat aria-controls="chatDrawer" aria-label="Open My Symbion">
+        <img class="symbion-face" src="assets/roland-twin/avatar.png?v=1" width="22" height="22" alt="">
+        <span>My Symbion</span>
+      </button>
+      <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main" class="course">
+    <div class="course-toolbar">
+      <a class="course-back" href="class.html">
+        <svg class="course-back-arrow" viewBox="0 0 1024 1024" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M438.4 297.6c12.8 12.8 12.8 28.8 3.2 41.6l-3.2 3.2L300.8 480H800c19.2 0 32 12.8 32 32 0 16-12.8 28.8-28.8 32H300.8l137.6 137.6c12.8 12.8 12.8 28.8 3.2 41.6l-3.2 3.2c-12.8 12.8-28.8 12.8-41.6 3.2l-3.2-3.2-192-192-3.2-3.2-3.2-3.2-3.2-3.2V499.2l3.2-3.2 3.2-3.2 3.2-3.2 192-192c12.8-12.8 32-12.8 44.8 0z"/>
+        </svg>
+        <span>Back to Class</span>
+      </a>
+      <span class="course-mode is-recorded">Recorded</span>
+    </div>
+
+    <header class="course-head" data-reveal>
+      <div>
+        <h1 id="courseTitle">Introduction to Quark-Gluon Plasma</h1>
+        <p class="course-meta" id="courseMeta">Graduate seminar recordings / Fall 2025 / Online</p>
+      </div>
+    </header>
+
+    <div class="course-layout" data-reveal data-reveal-delay="1">
+      <div>
+        <div class="course-stage" aria-label="Lecture player">
+          <button type="button" class="course-play" id="playBtn" aria-label="Play lecture"></button>
+          <div class="course-stage-caption">
+            <span id="nowPlaying">01 / Collision geometry</span>
+            <span>42:18</span>
+          </div>
+        </div>
+        <p class="course-note">Prototype player - opens lecture notes in Symbion when you press play.</p>
+        <div class="course-actions">
+          <button type="button" class="btn primary" data-open-chat><span>Ask Symbion</span></button>
+          <a class="btn ghost" href="https://ocw.mit.edu/courses/8-13-14-experimental-physics-i-ii-junior-lab-fall-2016-spring-2017/" target="_blank" rel="noopener"><span>Course materials</span></a>
+        </div>
+      </div>
+
+      <aside class="course-side" aria-label="Lecture list">
+        <h2>Lectures</h2>
+        <ul class="lecture-list" id="lectureList">
+          <li><a class="is-active" href="#l1" data-title="01 / Collision geometry"><em>01</em><div><b>Collision geometry</b><span>Overview of centrality</span></div><time>42m</time></a></li>
+          <li><a href="#l2" data-title="02 / Soft probes"><em>02</em><div><b>Soft probes</b><span>Multiplicity and flow</span></div><time>38m</time></a></li>
+          <li><a href="#l3" data-title="03 / Hard probes"><em>03</em><div><b>Hard probes</b><span>Jets and quenching</span></div><time>51m</time></a></li>
+          <li><a href="#l4" data-title="04 / Small systems"><em>04</em><div><b>Small systems</b><span>Collectivity in pp</span></div><time>44m</time></a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <div class="backdrop" id="backdrop" hidden></div>
+  <aside class="drawer twin-drawer" id="chatDrawer" aria-labelledby="chatTitle" aria-hidden="true">
+    <div class="twin-nav">
+      <button type="button" class="twin-back" id="closeChat" aria-label="Back to page">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10.5 3.5 6 8l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Back</span>
+      </button>
+    </div>
+
+    <header class="twin-head" aria-label="Digital twin identity">
+      <div class="twin-avatar-wrap" data-twin-status="ready">
+        <img class="twin-avatar" src="assets/roland-twin/avatar.png?v=1" width="64" height="64" alt="Gunther Roland digital twin">
+        <span class="twin-status-dot" aria-hidden="true"></span>
+      </div>
+      <div class="twin-head-copy">
+        <h2 id="chatTitle">Gunther Roland</h2>
+        <p class="twin-sub">Digital Twin · MIT Physics</p>
+        <p class="twin-status-text" data-twin-status-text>Online &amp; Ready</p>
+      </div>
+    </header>
+
+    <div class="twin-body">
+      <div class="twin-chat">
+        <div class="messages" id="messages" aria-live="polite">
+          <div class="msg ai">
+            <span class="msg-who">Gunther Roland</span>
+            <div class="bubble"><p>Hello, I'm Gunther's digital twin. Feel free to ask me questions about this course, lecture slides and assigned readings.</p></div>
+          </div>
+        </div>
+
+        <div class="twin-compose">
+          <div class="suggest-chips" role="group" aria-label="Suggested questions">
+            <button type="button" class="suggest-chip" data-suggest="Explain this lecture concept">Explain this lecture concept</button>
+            <button type="button" class="suggest-chip" data-suggest="Help me understand the reading">Help me understand the reading</button>
+            <button type="button" class="suggest-chip" data-suggest="Clarify assignment requirements">Clarify assignment requirements</button>
+          </div>
+          <form id="chatForm" class="composer">
+            <div class="attach-chips" id="attachChips" hidden></div>
+            <div class="composer-box">
+              <label class="sr-only" for="chatInput">Ask Gunther</label>
+              <textarea id="chatInput" rows="2" placeholder="Ask Gunther about this course, readings or lecture content..."></textarea>
+              <div class="composer-bar">
+                <div class="composer-tools">
+                  <label class="attach-btn" title="Attach file">
+                    <input type="file" id="attachFile" accept="image/*,.pdf,.txt,.doc,.docx,.csv,.png,.jpg,.jpeg,.webp">
+                    <svg viewBox="0 0 1024 1024" width="20" height="20" aria-hidden="true">
+                      <path class="attach-ring" fill="currentColor" d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0zm0 972.8C256 972.8 51.2 768 51.2 512S256 51.2 512 51.2 972.8 256 972.8 512 768 972.8 512 972.8z"/>
+                      <path fill="currentColor" d="M774.4 486.4H537.6V249.6c0-12.8-12.8-25.6-25.6-25.6S486.4 236.8 486.4 249.6v236.8H249.6C236.8 486.4 224 499.2 224 512c0 12.8 12.8 25.6 25.6 25.6h236.8v236.8c0 12.8 12.8 25.6 25.6 25.6s25.6-12.8 25.6-25.6V537.6h236.8c12.8 0 25.6-12.8 25.6-25.6 0-12.8-12.8-25.6-25.6-25.6z"/>
+                    </svg>
+                  </label>
+                </div>
+                <div class="composer-actions">
+                  <button type="button" class="mic-btn" title="Voice input (coming soon)" aria-label="Voice input coming soon" disabled>
+                    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2z"/></svg>
+                  </button>
+                  <button type="submit" class="send-btn">Send</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="twin-powered">Powered by Symbion</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+<script src="app.js?v=87"></script>
+  <script src="course-recorded.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+  "runAt": "2026-09-14T19:31:50.523Z",
+  "base": "http://127.0.0.1:41783/",
+  "results": [
+    {
+      "test": "desktop HTTP",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "test": "desktop document",
+      "pass": true
+    },
+    {
+      "test": "desktop supplied portrait loaded",
+      "pass": true
+    },
+    {
+      "test": "desktop horizontal overflow",
+      "pass": true
+    },
+    {
+      "test": "desktop assistant open/close",
+      "pass": true
+    },
+    {
+      "test": "desktop evidence-backed answer",
+      "pass": true
+    },
+    {
+      "test": "desktop button accessible names",
+      "pass": true
+    },
+    {
+      "test": "desktop console",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "test": "mobile menu",
+      "pass": true
+    },
+    {
+      "test": "mobile HTTP",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "test": "mobile document",
+      "pass": true
+    },
+    {
+      "test": "mobile supplied portrait loaded",
+      "pass": true
+    },
+    {
+      "test": "mobile horizontal overflow",
+      "pass": true
+    },
+    {
+      "test": "mobile assistant open/close",
+      "pass": true
+    },
+    {
+      "test": "mobile evidence-backed answer",
+      "pass": true
+    },
+    {
+      "test": "mobile button accessible names",
+      "pass": true
+    },
+    {
+      "test": "mobile console",
+      "pass": true,
+      "detail": []
+    }
+  ]
+}
