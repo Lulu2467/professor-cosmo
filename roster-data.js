@@ -281,7 +281,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Sarah Kavanagh on Education policy, Educational equity, Teacher education.",
-    "photo": "assets/portraits/sarah-kavanagh.jpg?v=4",
+    "photo": "assets/portraits/sarah-kavanagh.jpg?v=5",
     "template": false
   },
   {
