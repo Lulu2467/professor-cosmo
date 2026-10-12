@@ -9,7 +9,7 @@ window.LECTURE_ROSTER = [
     "school": "California Institute of Technology",
     "schoolShort": "Caltech",
     "role1": "Professor at California Institute of Technology.",
-    "role2": "Greer's research focuses on creating and characterizing classes of materials with multi-scale microstructural hierarchy, which combine three-dimensional (3D)…",
+    "role2": "She builds materials that combine 3D architectures with nanoscale properties.",
     "courseCode": "CO006311",
     "courseEn": "Fundamentals of Materials Science",
     "topics": [
@@ -77,7 +77,7 @@ window.LECTURE_ROSTER = [
     "school": "University of Southern California",
     "schoolShort": "USC",
     "role1": "Professor of Clinical Data Sciences and Operations at University of Southern California.",
-    "role2": "Professor Cosimo Arnesano is a versatile and knowledgeable interdisciplinary scientist and scholar, with expertise spanning various fields such as biology, biochemistry,…",
+    "role2": "His work joins data science, biomedical imaging, and business analytics.",
     "courseCode": "CO006030",
     "courseEn": "AI-Driven Business Analytics",
     "topics": [
@@ -155,7 +155,7 @@ window.LECTURE_ROSTER = [
     "school": "The University of Maryland",
     "schoolShort": "Maryland",
     "role1": "Professor of Media & International Affairs at The University of Maryland.",
-    "role2": "Professor Susan Moeller received her bachelor's degree from Yale University in 1979, and went on to earn her master's and doctoral degrees from Harvard University in…",
+    "role2": "She studies global news coverage and how media shapes public affairs.",
     "courseCode": "CO006029",
     "courseEn": "Communication through Social & Digital Media",
     "topics": [
@@ -224,7 +224,7 @@ window.LECTURE_ROSTER = [
     "school": "University of Pennsylvania",
     "schoolShort": "Penn",
     "role1": "Professor of Teaching, Learning, and Leadership Division at University of Pennsylvania.",
-    "role2": "Professor Sarah Kavanagh is a tenured faculty member at the Graduate School of Education, University of Pennsylvania, where she serves as the Director of the…",
+    "role2": "She studies how teachers turn equity into classroom practice.",
     "courseCode": "CO006028",
     "courseEn": "How People Learn: An Investigation into Theories of Learning",
     "topics": [
@@ -294,7 +294,7 @@ window.LECTURE_ROSTER = [
     "school": "University of Chicago",
     "schoolShort": "Chicago",
     "role1": "Associate Professor at University of Chicago.",
-    "role2": "Professor Richard Payne is currently a tenured professor at the University of Chicago's Department of History, renowned as one of the foremost scholars in the fields of…",
+    "role2": "He studies religion and culture in late antique Iran and East Asia.",
     "courseCode": "CO006027",
     "courseEn": "Lecture-The Silk Road in Global History",
     "topics": [
@@ -364,7 +364,7 @@ window.LECTURE_ROSTER = [
     "school": "University College London",
     "schoolShort": "UCL",
     "role1": "Professor of Language Sciences at University College London.",
-    "role2": "Andrew Nevins earned dual Bachelor's degrees in Cognitive Science and Computer Science from MIT in 2000, followed by a PhD in Linguistics from the same institution in…",
+    "role2": "He studies phonology, morphology, and minoritized languages.",
     "courseCode": "CO006026",
     "courseEn": "Linguistic Encoding: Writing Systems, Emojis and Signs",
     "topics": [
@@ -432,7 +432,7 @@ window.LECTURE_ROSTER = [
     "school": "Cornell University",
     "schoolShort": "Cornell",
     "role1": "Associate Professor, Department of Human Development, Cornell University.",
-    "role2": "Professor Daniel Casasanto completed his Bachelor's degree in English Literature and Vocal Performance at Oberlin College, continued his studies in Neuroscience at the…",
+    "role2": "He studies how language, culture, and the body shape thought.",
     "courseCode": "CO006025",
     "courseEn": "Human Brain & Mind: An introduction to cognitive neuroscience",
     "topics": [
@@ -501,7 +501,7 @@ window.LECTURE_ROSTER = [
     "school": "Cornell University",
     "schoolShort": "Cornell",
     "role1": "Professor of Psychology, Cornell University.",
-    "role2": "Personality science.",
+    "role2": "She studies personality, close relationships, and social cognition.",
     "courseCode": "CO006024",
     "courseEn": "Introduction to Personality Science and Research",
     "topics": [
@@ -564,7 +564,7 @@ window.LECTURE_ROSTER = [
     "school": "Brown University",
     "schoolShort": "Brown",
     "role1": "Senior Associate Dean of Biology Education at Brown University.",
-    "role2": "Kate Smith PhD is Associate Professor of Medical Science and Senior Associate Dean of Biology Education.",
+    "role2": "Her scholarship focuses on planetary health and biology education.",
     "courseCode": "CO006022",
     "courseEn": "Planetary Health",
     "topics": [
@@ -624,7 +624,7 @@ window.LECTURE_ROSTER = [
     "school": "Harvard University",
     "schoolShort": "Harvard",
     "role1": "Professor of Molecular and Cellular Biology at Harvard University.",
-    "role2": "Samuel Kunes is a Professor of Molecular and Cellular Biology at Harvard University.",
+    "role2": "He studies how genes and neural plasticity shape behavior and vision.",
     "courseCode": "CO006021",
     "courseEn": "Molecular Biology of Memory and Memory Diseases",
     "topics": [
@@ -694,7 +694,7 @@ window.LECTURE_ROSTER = [
     "school": "Princeton University",
     "schoolShort": "Princeton",
     "role1": "Professor of Molecular Biology at Princeton University.",
-    "role2": "Alexander Ploss is currently a tenured professor in the Department of Molecular Biology at Princeton University, where he leads the Ploss Lab.",
+    "role2": "He studies immune responses to hepatitis viruses and other infections.",
     "courseCode": "CO006020",
     "courseEn": "Molecular & Cellular Immunology",
     "topics": [
@@ -764,7 +764,7 @@ window.LECTURE_ROSTER = [
     "school": "Carnegie Mellon University",
     "schoolShort": "Carnegie Mellon",
     "role1": "Professor of Electrical and Computer Engineering at Carnegie Mellon University.",
-    "role2": "Osman Yağan is a Professor in the Department of Electrical and Computer Engineering at Carnegie Mellon University and a core member of CyLab Security and Privacy…",
+    "role2": "He studies network science, wireless systems, and IoT security.",
     "courseCode": "CO006018",
     "courseEn": "Machine Learning for Decision-Making and Optimization",
     "topics": [
@@ -899,7 +899,7 @@ window.LECTURE_ROSTER = [
     "school": "University of Chicago",
     "schoolShort": "Chicago",
     "role1": "Associate Professor of Computer Science, Data Science at University of Chicago.",
-    "role2": "Haifeng Xu is an Associate Professor in the Department of Computer Science at UChicago, where he directs the Strategic IntelliGence for Machine Agents (SIGMA) lab .",
+    "role2": "He studies the economics of data and multi-agent machine learning.",
     "courseCode": "CO006016",
     "courseEn": "Algorithms for Big Data",
     "topics": [
@@ -967,7 +967,7 @@ window.LECTURE_ROSTER = [
     "school": "Imperial College London",
     "schoolShort": "Imperial",
     "role1": "Professor of Bioengineering at Imperial College London.",
-    "role2": "Neal Bangerter joined Imperial in February 2018 as Associate Professor of Bioengineering, where he specialises in medical imaging (with a focus on MRI), artificial…",
+    "role2": "He specializes in MRI, medical imaging, and machine learning.",
     "courseCode": "CO006015",
     "courseEn": "Brain/Machine Interfaces: Artificial Intelligence, Signals, & Circuits",
     "topics": [
@@ -1037,7 +1037,7 @@ window.LECTURE_ROSTER = [
     "school": "Columbia University",
     "schoolShort": "Columbia",
     "role1": "Professor at Columbia University.",
-    "role2": "Patrick Houlihan is a professor of data science at Columbia University.",
+    "role2": "He works on data science, machine learning, and financial analytics.",
     "courseCode": "CO006014",
     "courseEn": "Data Science: Machine Learning and Natural Language Processing",
     "topics": [
@@ -1107,7 +1107,7 @@ window.LECTURE_ROSTER = [
     "school": "Imperial College London",
     "schoolShort": "Imperial",
     "role1": "Professor of Robotics and Autonomous Systems at Imperial College London.",
-    "role2": "Sen Wang is a Senior Lecturer (Associate Professor) in Robotics and Autonomous Systems in the Department of Electrical and Electronic Engineering at Imperial College…",
+    "role2": "He studies robot vision, localization, and autonomous navigation.",
     "courseCode": "CO006012",
     "courseEn": "Robot Perception, Localization and Navigation",
     "topics": [
@@ -1177,7 +1177,7 @@ window.LECTURE_ROSTER = [
     "school": "Imperial College London",
     "schoolShort": "Imperial",
     "role1": "Professor at Imperial College London.",
-    "role2": "Choi, a professor at Imperial College London, heads the Doctoral Training Program in Intelligent Medical Imaging.",
+    "role2": "He studies ultrasound methods for noninvasive brain treatment.",
     "courseCode": "CO006011",
     "courseEn": "Machine Learning in Biomedical Sciences and Bioengineering",
     "topics": [
@@ -1245,7 +1245,7 @@ window.LECTURE_ROSTER = [
     "school": "Columbia University",
     "schoolShort": "Columbia",
     "role1": "Professor of Dept. Applied Phys. and Applied Math at Columbia University.",
-    "role2": "NASA Goddard Institute for Space Studies.",
+    "role2": "She studies the global carbon cycle, ocean circulation, and climate.",
     "courseCode": "CO006009",
     "courseEn": "Numerical Models and Applications",
     "topics": [
@@ -1314,7 +1314,7 @@ window.LECTURE_ROSTER = [
     "school": "Cambridge University",
     "schoolShort": "Cambridge",
     "role1": "Professor of Theoretical Physics at Cambridge University.",
-    "role2": "Enrico Pajer is a professor of the theoretical physicist at the Department of Applied Mathematics and Theoretical Physics and part of the General Relativity research…",
+    "role2": "He studies cosmology, inflation, and the cosmic microwave background.",
     "courseCode": "CO006008",
     "courseEn": "An introduction to Exoplanets and Cosmology",
     "topics": [
@@ -1381,7 +1381,7 @@ window.LECTURE_ROSTER = [
     "school": "Carnegie Mellon University",
     "schoolShort": "Carnegie Mellon",
     "role1": "Professor of Civil and Environmental Engineering at Carnegie Mellon University.",
-    "role2": "Joe Dallas Moore received his B.S.",
+    "role2": "He studies microbes, nanotechnology, and water treatment.",
     "courseCode": "CO006007",
     "courseEn": "Water Treatment and Sustainable System for Water Resource Recovery",
     "topics": [
@@ -1451,7 +1451,7 @@ window.LECTURE_ROSTER = [
     "school": "Carnegie Mellon University",
     "schoolShort": "Carnegie Mellon",
     "role1": "Professor of Mechanical Engineering at Carnegie Mellon University.",
-    "role2": "Diana Haidar is a professor of Carnegie Mellon University in the Department of Mechanical Engineering and leads efforts in the new Maker Ecosystem.",
+    "role2": "She designs nanocomposites for extreme environments.",
     "courseCode": "CO006006",
     "courseEn": "Machine Component Design",
     "topics": [
@@ -1519,7 +1519,7 @@ window.LECTURE_ROSTER = [
     "school": "University of Southern California",
     "schoolShort": "USC",
     "role1": "Professor at University of Southern California.",
-    "role2": "Professor Lorena Martin received her B.A.",
+    "role2": "She uses data science to study sports performance and injury risk.",
     "courseCode": "CO006003",
     "courseEn": "Leap into the World of Sports Data Science and Management",
     "topics": [
@@ -1589,7 +1589,7 @@ window.LECTURE_ROSTER = [
     "school": "University of Cambridge",
     "schoolShort": "Cambridge",
     "role1": "Professor of Entrepreneurship and Sustainable Futures at University of Cambridge.",
-    "role2": "Matthew Grimes is a Professor in Judge Business School, University of Cambridge.",
+    "role2": "He studies entrepreneurship and how organizations create social change.",
     "courseCode": "CO006002",
     "courseEn": "Entrepreneurship: Evaluating Market Opportunities",
     "topics": [
@@ -1657,7 +1657,7 @@ window.LECTURE_ROSTER = [
     "school": "London School of Economics and Political Science",
     "schoolShort": "LSE",
     "role1": "Professor of Mathematics at London School of Economics and Political Science.",
-    "role2": "Johannes Ruf is a Professor in the Department of Mathematics, The London School of Economics and Political Science.",
+    "role2": "He studies stochastic analysis and mathematical finance.",
     "courseCode": "CO006000",
     "courseEn": "Financial Mathmatics and FinTech",
     "topics": [
@@ -1727,7 +1727,7 @@ window.LECTURE_ROSTER = [
     "school": "Cambridge University",
     "schoolShort": "Cambridge",
     "role1": "Professor of Political Economy at Cambridge University.",
-    "role2": "Oliver Linton is a Professor of Political Economy at the University of Cambridge and a Fellow of Trinity College since 2011.",
+    "role2": "He studies econometrics and statistical methods for financial data.",
     "courseCode": "CO005999",
     "courseEn": "Financial Econometrics",
     "topics": [
@@ -1797,7 +1797,7 @@ window.LECTURE_ROSTER = [
     "school": "Cambridge University",
     "schoolShort": "Cambridge",
     "role1": "Professor of Finance at Cambridge University.",
-    "role2": "Raghavendra Rau is a Professor of Finance at the Judge Business School at the University of Cambridge and a founding director of the Cambridge Centre for Alternative…",
+    "role2": "He studies how investors and firms acquire and use information.",
     "courseCode": "CO005998",
     "courseEn": "Financial Valuation",
     "topics": [
@@ -1867,7 +1867,7 @@ window.LECTURE_ROSTER = [
     "school": "University of Cambridge",
     "schoolShort": "Cambridge",
     "role1": "Professor of Land Economy at University of Cambridge.",
-    "role2": "Philip Michael Allmendinger is an internationally renowned expert in land economy and urban planning.",
+    "role2": "He studies land economy and urban planning.",
     "courseCode": "CO005997",
     "courseEn": "Urban Planning and Land Economy",
     "topics": [
@@ -1936,8 +1936,8 @@ window.LECTURE_ROSTER = [
     "line2": "Robertson",
     "school": "Cambridge University",
     "schoolShort": "Cambridge",
-    "role1": "Professor of Economics, University of Cambridge at Cambridge University.",
-    "role2": "Donald Robertson is a distinguished economist known for his extensive research contributions in various areas of economics.",
+    "role1": "Professor of Economics at the University of Cambridge.",
+    "role2": "He studies forecasting, taxation, and macroeconomic shocks.",
     "courseCode": "CO005996",
     "courseEn": "Data Analysis for Economics and Finance",
     "topics": [
