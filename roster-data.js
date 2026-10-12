@@ -551,7 +551,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Vivian Zayas on Personality science, Close relationships, Social cognition.",
-    "photo": "assets/portraits/vivian-zayas.jpg?v=5",
+    "photo": "assets/portraits/vivian-zayas.jpg?v=4",
     "template": false
   },
   {
@@ -611,7 +611,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Katherine F. Smith on Planetary health, Biogeography, Environmental change.",
-    "photo": "assets/portraits/katherine-f-smith.jpg?v=3",
+    "photo": "assets/portraits/katherine-f-smith.jpg?v=4",
     "template": false
   },
   {
@@ -1714,7 +1714,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Johannes Ruf on Financial mathematics, FinTech, Stochastic analysis.",
-    "photo": "assets/portraits/johannes-ruf.jpg?v=3",
+    "photo": "assets/portraits/johannes-ruf.jpg?v=4",
     "template": false
   },
   {
@@ -1854,7 +1854,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Raghavendra Rau on Financial valuation, Corporate finance, Asset pricing.",
-    "photo": "assets/portraits/raghavendra-rau.jpg?v=3",
+    "photo": "assets/portraits/raghavendra-rau.jpg?v=4",
     "template": false
   },
   {
