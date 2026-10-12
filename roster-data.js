@@ -142,7 +142,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Cosimo Arnesano on Business analytics, Machine learning, Data mining.",
-    "photo": "assets/portraits/cosimo-arnesano.jpg",
+    "photo": "assets/portraits/cosimo-arnesano.jpg?v=2",
     "template": false
   },
   {
@@ -281,7 +281,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Sarah Kavanagh on Education policy, Educational equity, Teacher education.",
-    "photo": "assets/portraits/sarah-kavanagh.jpg?v=5",
+    "photo": "assets/portraits/sarah-kavanagh.jpg?v=11",
     "template": false
   },
   {
@@ -351,7 +351,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Richard Payne on Silk Road history, Religious exchange, Medieval Europe.",
-    "photo": "assets/portraits/richard-payne.jpg",
+    "photo": "assets/portraits/richard-payne.jpg?v=2",
     "template": false
   },
   {
@@ -419,7 +419,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Andrew Nevins on Writing systems, Phonology, Syntax.",
-    "photo": "assets/portraits/andrew-nevins.jpg",
+    "photo": "assets/portraits/andrew-nevins.jpg?v=2",
     "template": false
   },
   {
@@ -488,7 +488,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Daniel Casasanto on Cognitive neuroscience, Psycholinguistics, Gesture.",
-    "photo": "assets/portraits/daniel-casasanto.jpg?v=3",
+    "photo": "assets/portraits/daniel-casasanto.jpg?v=6",
     "template": false
   },
   {
@@ -611,7 +611,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Katherine F. Smith on Planetary health, Biogeography, Environmental change.",
-    "photo": "assets/portraits/katherine-f-smith.jpg?v=4",
+    "photo": "assets/portraits/katherine-f-smith.jpg?v=5",
     "template": false
   },
   {
@@ -681,7 +681,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Samuel Kunes on Memory biology, Neural plasticity, Visual neurons.",
-    "photo": "assets/portraits/samuel-kunes.jpg",
+    "photo": "assets/portraits/samuel-kunes.jpg?v=2",
     "template": false
   },
   {
@@ -1232,7 +1232,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with James J. Choi on Biomedical imaging, Drug delivery, Noninvasive devices.",
-    "photo": "assets/portraits/james-j-choi.jpg?v=3",
+    "photo": "assets/portraits/james-j-choi.jpg?v=6",
     "template": false
   },
   {
@@ -1784,7 +1784,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Oliver Linton on Financial econometrics, Time series, Empirical finance.",
-    "photo": "assets/portraits/oliver-linton.jpg",
+    "photo": "assets/portraits/oliver-linton.jpg?v=4",
     "template": false
   },
   {
@@ -1994,7 +1994,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Donald Robertson on Causal inference, Econometrics, Policy analysis.",
-    "photo": "assets/portraits/donald-robertson.jpg?v=3",
+    "photo": "assets/portraits/donald-robertson.jpg?v=6",
     "template": false
   }
 ];
