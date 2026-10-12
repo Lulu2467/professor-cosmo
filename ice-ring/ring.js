@@ -33,10 +33,18 @@ const FAN_START = 0.06;
 const DESIGN_COUNT = 12;
 const slotOf = (count) => TAU / Math.max(count, DESIGN_COUNT);
 
+// A full ring alternates either side of the seed so the circle closes.
+// A short arc must stay in list order on the side a downward scroll brings
+// forward. Alternating puts the seed in the middle: scrolling down walks
+// one side and finishes on the last card, and the cards above the first
+// only appear if the reader scrolls back up.
+const slotIndex = (i, count) =>
+  count >= DESIGN_COUNT ? signedOffset(i) : -i;
+
 // Spin that parks card i on the front, wound to the turn nearest `spin`.
 const spinForCard = (i, count, frontAngle, seedDeg, spin) => {
   const target =
-    frontAngle - seedDeg * DEG - signedOffset(i) * slotOf(count);
+    frontAngle - seedDeg * DEG - slotIndex(i, count) * slotOf(count);
   return target + Math.round((spin - target) / TAU) * TAU;
 };
 
@@ -341,16 +349,13 @@ export function createRing(refs, options = {}) {
   const pick = (i) => {
     const count = Math.round(params.count);
     const slot = slotOf(count);
-    // Spread, plane i sits at seed + signedOffset(i) * slot + spin.
-    const base = frontAngle - params.seed * DEG - signedOffset(i) * slot;
-    // Nearest equivalent winding, so it takes the short way round rather than
-    // unwinding whole turns. Every card is within half a ring.
-    const target = base + Math.round((state.spin - base) / TAU) * TAU;
+    // Same slot the scroll uses, so a click parks the card the wheel would.
+    const target = spinForCard(i, count, frontAngle, params.seed, state.spin);
 
     const slots = Math.abs(target - state.spin) / slot;
     // Art is dealt by ring slot; open the paper for that cell, not plane index.
     const imgOff = Math.round(params.imageOffset);
-    const sIdx = signedOffset(i);
+    const sIdx = slotIndex(i, count);
     const cell =
       imageCount > 0
         ? (((imgOff - sIdx) % imageCount) + imageCount) % imageCount
@@ -717,7 +722,7 @@ export function createRing(refs, options = {}) {
 
     // Every generation is in flight at once, offset by a small phase, so this
     // is one continuous unfurl and not a queue of separate pops.
-    const maxN = Math.max(1, Math.abs(signedOffset(count - 1)));
+    const maxN = Math.max(1, Math.abs(slotIndex(count - 1, count)));
     const dur = Math.max(0.1, 1 - FAN_START - params.stagger);
 
     // Cumulative, so an unborn plane sits exactly on top of its parent and is
@@ -773,7 +778,7 @@ export function createRing(refs, options = {}) {
     const focusI = track ? over : -1;
 
     for (let i = 0; i < count; i++) {
-      const sIdx = signedOffset(i);
+      const sIdx = slotIndex(i, count);
       const n = Math.abs(sIdx);
       const u = i === 0 ? clamp01(state.progress) : travel[n];
       const cell = cellOf(sIdx);
@@ -1012,7 +1017,7 @@ export function createRing(refs, options = {}) {
     // One bridge per parent/child pair, in ring order. Deliberately none
     // closing the circle while the fan is opening: those two planes were never
     // merged, so there is nothing between them to stretch.
-    order.sort((a, b) => signedOffset(a) - signedOffset(b));
+    order.sort((a, b) => slotIndex(a, count) - slotIndex(b, count));
 
     const edgeHalf = faceEdge * 0.5 * params.thread;
     // Once closed the seam pair are neighbours like any other, and without a

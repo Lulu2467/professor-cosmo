@@ -49,7 +49,7 @@ const fallback = (why) => {
 
   let ring;
   try {
-    const { createRing } = await import("./ring.js?v=104");
+    const { createRing } = await import("./ring.js?v=106");
     ring = createRing(
       {
         container,
