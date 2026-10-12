@@ -1024,7 +1024,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Neal Bangerter on Brain-machine interfaces, Medical imaging, Signal processing.",
-    "photo": "assets/portraits/neal-bangerter.jpg?v=2",
+    "photo": "assets/portraits/neal-bangerter.jpg?v=3",
     "template": false
   },
   {
