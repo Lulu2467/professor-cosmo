@@ -31,7 +31,7 @@
   const RIPPLE_SPEED = 0.32;
   const RIPPLE_LIFE = 1.35;
 
-  const TERMS = [
+  const TERMS = window.ACTIVE_TERMS || [
     { t: "Heavy-ion collisions", w: 5 },
     { t: "Jet quenching", w: 5 },
     { t: "Quark-gluon plasma", w: 4 },
@@ -112,7 +112,41 @@
       buildHubs();
       hubsReady = true;
     }
+    measureHubs();
     resizing = false;
+  }
+
+  // Labels sit above their dots and can hang past the card. Pull every word
+  // fully inside the stage; a phrase wider than the card wraps instead of
+  // being clipped by the rounded frame.
+  function measureHubs() {
+    const inner = Math.max(48, w - 36);
+    for (const hub of hubs) {
+      hub.el.style.maxWidth = "";
+      hub.el.style.whiteSpace = "nowrap";
+      if (hub.el.offsetWidth > inner) {
+        hub.el.style.whiteSpace = "normal";
+        hub.el.style.maxWidth = `${inner}px`;
+      }
+      hub.bw = hub.el.offsetWidth;
+      hub.bh = hub.el.offsetHeight;
+    }
+  }
+
+  function placeHub(hub, hx, hy) {
+    const padX = 18;
+    const padY = 14;
+    const half = (hub.bw || 0) / 2;
+    const bh = hub.bh || 0;
+    let x = hx + hub.ox;
+    let y = hy + hub.oy;
+    const minX = padX + half;
+    const maxX = Math.max(minX, w - padX - half);
+    const minY = padY + bh;
+    const maxY = Math.max(minY, h - padY);
+    x = Math.min(maxX, Math.max(minX, x));
+    y = Math.min(maxY, Math.max(minY, y));
+    hub.el.style.transform = `translate(${x}px, ${y}px) translate(-50%, -100%)`;
   }
 
   function buildDots() {
@@ -319,7 +353,7 @@
       ctx.globalAlpha = 1;
 
       hub.el.style.opacity = String(hubAlpha);
-      hub.el.style.transform = `translate(${hx + hub.ox}px, ${hy + hub.oy}px) translate(-50%, -100%)`;
+      placeHub(hub, hx, hy);
     }
 
     for (let i = ripples.length - 1; i >= 0; i--) {

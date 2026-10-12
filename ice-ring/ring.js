@@ -12,7 +12,7 @@ import { createMeta } from "./meta.js?v=89";
 import { createSplitText } from "./splitText.js?v=89";
 import { createTag, TAG_W, TAG_H } from "./tag.js?v=89";
 import { createAsciiTexture } from "./ascii.js?v=89";
-import { defaultParams } from "./params.js?v=89";
+import { defaultParams } from "./params.js?v=100";
 import { PROJECTS } from "./projects.js?v=89";
 import {
   TAU,
@@ -28,6 +28,17 @@ import {
 
 // The fan starts fractionally into the spread so the seed reads first.
 const FAN_START = 0.06;
+// The ring is drawn for 12 cards. Fewer than that keep this spacing and sit
+// on the front arc; spreading them over a full turn puts cards on their side.
+const DESIGN_COUNT = 12;
+const slotOf = (count) => TAU / Math.max(count, DESIGN_COUNT);
+
+// Spin that parks card i on the front, wound to the turn nearest `spin`.
+const spinForCard = (i, count, frontAngle, seedDeg, spin) => {
+  const target =
+    frontAngle - seedDeg * DEG - signedOffset(i) * slotOf(count);
+  return target + Math.round((spin - target) / TAU) * TAU;
+};
 
 const blankTexture = () => {
   const t = new THREE.DataTexture(new Uint8Array([255, 255, 255, 255]), 1, 1);
@@ -329,7 +340,7 @@ export function createRing(refs, options = {}) {
   // standstill and has to accelerate.
   const pick = (i) => {
     const count = Math.round(params.count);
-    const slot = TAU / count;
+    const slot = slotOf(count);
     // Spread, plane i sits at seed + signedOffset(i) * slot + spin.
     const base = frontAngle - params.seed * DEG - signedOffset(i) * slot;
     // Nearest equivalent winding, so it takes the short way round rather than
@@ -648,7 +659,7 @@ export function createRing(refs, options = {}) {
     const count = Math.round(params.count);
     uniforms.uCount.value = count;
 
-    const step = TAU / count;
+    const step = slotOf(count);
     const spread = clamp01(state.spread);
 
     const endScale = narrowNow ? params.narrowEndScale : params.endScale;
@@ -1007,7 +1018,7 @@ export function createRing(refs, options = {}) {
     // Once closed the seam pair are neighbours like any other, and without a
     // link the one gap the fan never opened is the only one the cursor cannot
     // web back together.
-    const closed = spread > 0.995 && count > 2;
+    const closed = spread > 0.995 && count > 2 && count >= DESIGN_COUNT;
     const linkCount = Math.min(closed ? count : count - 1, MAX_LINKS);
 
     for (let l = 0; l < linkCount; l++) {
@@ -1292,7 +1303,8 @@ export function createRing(refs, options = {}) {
       let off = 0;
 
       if (params.snap) {
-        const slot = TAU / Math.round(params.count);
+        const count = Math.round(params.count);
+        const slot = slotOf(count);
         // Rate the damping alone bleeds velocity off at, in 1/s. What is left
         // to coast is exactly v / this.
         const decay = Math.max(0.01, -Math.log(params.damping) * 60);
@@ -1311,8 +1323,23 @@ export function createRing(refs, options = {}) {
           // carries on to the slot it was already heading for rather than
           // pulling up short.
           const coast = state.spin + spinVel / decay;
-          const phase = params.seed * DEG - frontAngle;
-          snapTo = Math.round((coast + phase) / slot) * slot - phase;
+          let best = coast;
+          let bestD = Infinity;
+          for (let i = 0; i < count; i++) {
+            const wound = spinForCard(
+              i,
+              count,
+              frontAngle,
+              params.seed,
+              coast,
+            );
+            const d = Math.abs(wound - coast);
+            if (d < bestD) {
+              bestD = d;
+              best = wound;
+            }
+          }
+          snapTo = best;
           // Never quicker than it was already going, so the run-in can only
           // slow the ring down.
           snapCap = Math.max(Math.abs(spinVel), slot * 0.5 * rate);

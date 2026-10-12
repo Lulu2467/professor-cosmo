@@ -37,8 +37,10 @@ const COURSES = {
   },
 };
 
-const id = new URLSearchParams(location.search).get("id") || "subatomic";
-const course = COURSES[id] || COURSES.subatomic;
+const id = new URLSearchParams(location.search).get("id") || (window.ACTIVE_SLUG ? "lecture" : "subatomic");
+const course = window.ACTIVE_SLUG
+  ? (window.ACTIVE_COURSES && (window.ACTIVE_COURSES[id] || window.ACTIVE_COURSES.lecture))
+  : (COURSES[id] || COURSES.subatomic);
 
 const titleEl = document.getElementById("courseTitle");
 const metaEl = document.getElementById("courseMeta");
@@ -52,7 +54,7 @@ if (modeEl) {
   modeEl.textContent = course.mode || "Recorded";
   modeEl.className = `course-mode ${course.modeClass || "is-recorded"}`;
 }
-document.title = `${course.title} - Class - Gunther M. Roland`;
+document.title = `${course.title} - Class - ${window.TWIN_FULL || "Gunther M. Roland"}`;
 
 if (listEl) {
   listEl.innerHTML = course.lectures
@@ -68,6 +70,17 @@ if (listEl) {
     )
     .join("");
 
+  const clock = document.querySelector(".course-stage-caption span:last-child");
+  const showClock = (dur) => {
+    if (!clock) return;
+    clock.textContent = dur || (window.ACTIVE_SLUG ? "October 2026" : "");
+  };
+  if (nowEl && course.lectures[0]) {
+    const [n, name, , dur] = course.lectures[0];
+    nowEl.textContent = `${n} / ${name}`;
+    showClock(dur);
+  }
+
   listEl.addEventListener("click", (e) => {
     const a = e.target.closest("a");
     if (!a) return;
@@ -75,6 +88,7 @@ if (listEl) {
     listEl.querySelectorAll("a").forEach((x) => x.classList.remove("is-active"));
     a.classList.add("is-active");
     if (nowEl) nowEl.textContent = a.dataset.title || a.textContent.trim();
+    showClock(a.querySelector("time")?.textContent || "");
   });
 }
 

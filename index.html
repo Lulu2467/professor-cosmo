@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script src="roster-data.js?v=4"></script>
+  <script>if(new URLSearchParams(location.search).get("p")&&new URLSearchParams(location.search).get("p")!=="gunther-roland")document.documentElement.classList.add("prof-pending");</script>
+  <style>html.prof-pending body{visibility:hidden}</style>
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Gunther M. Roland - teaching and research hub. Powered by Symbion and Cosmo.">
   <title>Gunther M. Roland - SYMBION - COSMO</title>
@@ -212,10 +216,11 @@
   </aside>
 
 <div class="toast" id="joinToast" hidden role="status" aria-live="polite"></div>
-  <script src="app.js?v=87"></script>
+    <script src="apply-prof.js?v=5"></script>
+<script src="app.js?v=89"></script>
   <script src="hero-field.js?v=6"></script>
   <script src="hero-globe.js?v=3"></script>
   <script src="halftone-hero.js?v=6"></script>
-  <script type="module" src="ice-ring/mount.js?v=99"></script>
+  <script type="module" src="ice-ring/mount.js?v=100"></script>
 </body>
 </html>

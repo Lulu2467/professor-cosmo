@@ -45,7 +45,7 @@ function addMessage(kind, text, opts = {}) {
   row.className = `msg ${kind}`;
   const who = document.createElement('span');
   who.className = 'msg-who';
-  who.textContent = kind === 'ai' ? 'Gunther Roland' : 'Student';
+  who.textContent = kind === 'ai' ? (window.TWIN_SIGN || 'Gunther Roland') : 'Student';
   const bubble = document.createElement('div');
   bubble.className = 'bubble';
   const p = document.createElement('p');
@@ -142,39 +142,54 @@ function submit() {
   input.value = '';
 
   const q = value.toLowerCase();
-  let answer =
-    'I can help with this course, lecture slides, and assigned readings. Ask about a concept, a reading, or an assignment.';
+  const course = window.ACTIVE_COURSE || "this course";
+  const focus = (window.ACTIVE_TOPICS || []).slice(0, 3).join(", ") || course;
+  const first = window.TWIN_FIRST || "the professor";
+  let answer = window.ACTIVE_SLUG
+    ? `I can help with ${first}'s course, ${course}. Ask about ${focus}.`
+    : "I can help with this course, lecture slides, and assigned readings. Ask about a concept, a reading, or an assignment.";
   if (pending.length) {
-    answer = `Received ${pending.length} file(s) in this prototype. In production, I would match ${names || 'the upload'} to the current course materials.`;
-  } else if (q.includes('lecture') || q.includes('concept') || q.includes('explain')) {
+    answer = window.ACTIVE_SLUG
+      ? `Received ${pending.length} file(s) in this prototype. In production, I would match ${names || "the upload"} to ${first}'s course, ${course}.`
+      : `Received ${pending.length} file(s) in this prototype. In production, I would match ${names || "the upload"} to the current course materials.`;
+  } else if (q.includes("lecture") || q.includes("concept") || q.includes("explain")) {
+    answer = window.ACTIVE_SLUG
+      ? `In ${first}'s course, ${course}, start from the lecture definition, then one example tied to ${focus}. Tell me which part you want clarified.`
+      : "Here is a course-scoped take: start from the lecture definition, then check one worked example in the slides. Tell me which concept you want clarified.";
+  } else if (q.includes("reading") || q.includes("paper") || q.includes("understand")) {
+    answer = window.ACTIVE_SLUG
+      ? `For readings in ${course}, I can help summarize claims, evidence, and open questions around ${focus}. Share the section you are stuck on.`
+      : "For readings, I can help summarize claims, evidence, and open questions. Share the section or figure you are stuck on.";
+  } else if (q.includes("assignment") || q.includes("clarify") || q.includes("homework")) {
+    answer = window.ACTIVE_SLUG
+      ? `Assignment help stays inside ${first}'s course, ${course}: goals, deliverables, and how work is evaluated. What part of the brief is unclear?`
+      : "Assignment help stays within course requirements: goals, deliverables, and how work is evaluated. What part of the brief is unclear?";
+  } else if (q.includes("class") || q.includes("course") || (!window.ACTIVE_SLUG && q.includes("junior"))) {
+    answer = window.ACTIVE_SLUG
+      ? `This chat stays on ${first}'s course, ${course}. Use Class to open that lecture, then ask about ${focus}.`
+      : "This chat stays tied to the current course context. Use Class to open a course room, then ask me about that material.";
+  } else if (q.includes("research") || q.includes("project") || q.includes("join") || q.includes("apply")) {
+    answer = window.ACTIVE_SLUG
+      ? `${first}'s research themes are ${focus}. Applications and the theme list live on the Research page.`
+      : "Research applications live on the Research page. In this course chat I prioritize lecture and reading questions.";
+  } else if (q.includes("timeline") || q.includes("history") || q.includes("ice")) {
+    answer = window.ACTIVE_SLUG
+      ? `The Home timeline lists ${first}'s research themes: ${focus}.`
+      : "The Home timeline shows research milestones. For this course, ask about slides, readings, or discussions instead.";
+  } else if (!window.ACTIVE_SLUG && (q.includes("qgp") || q.includes("quark"))) {
     answer =
-      'Here is a course-scoped take: start from the lecture definition, then check one worked example in the slides. Tell me which concept you want clarified.';
-  } else if (q.includes('reading') || q.includes('paper') || q.includes('understand')) {
-    answer =
-      'For readings, I can help summarize claims, evidence, and open questions. Share the section or figure you are stuck on.';
-  } else if (q.includes('assignment') || q.includes('clarify') || q.includes('homework')) {
-    answer =
-      'Assignment help stays within course requirements: goals, deliverables, and how work is evaluated. What part of the brief is unclear?';
-  } else if (q.includes('class') || q.includes('course') || q.includes('junior')) {
-    answer = 'This chat stays tied to the current course context. Use Class to open a course room, then ask me about that material.';
-  } else if (q.includes('research') || q.includes('project') || q.includes('join') || q.includes('apply')) {
-    answer =
-      'Research applications live on the Research page. In this course chat I prioritize lecture and reading questions.';
-  } else if (q.includes('timeline') || q.includes('history') || q.includes('ice')) {
-    answer = 'The Home timeline shows research milestones. For this course, ask about slides, readings, or discussions instead.';
-  } else if (q.includes('qgp') || q.includes('quark')) {
-    answer =
-      'Quark-gluon plasma appears across several course threads. Ask about the lecture slide or reading section you are reviewing.';
+      "Quark-gluon plasma appears across several course threads. Ask about the lecture slide or reading section you are reviewing.";
   } else if (
-    !q.includes('course') &&
-    !q.includes('lecture') &&
-    !q.includes('reading') &&
-    !q.includes('class') &&
-    !q.includes('lab') &&
-    !q.includes('assign')
+    !q.includes("course") &&
+    !q.includes("lecture") &&
+    !q.includes("reading") &&
+    !q.includes("class") &&
+    !q.includes("lab") &&
+    !q.includes("assign")
   ) {
-    answer =
-      'I focus on course content, lecture materials, readings, and class discussions. Try a question tied to this course.';
+    answer = window.ACTIVE_SLUG
+      ? `I focus on ${first}'s course, ${course}, and the themes ${focus}.`
+      : "I focus on course content, lecture materials, readings, and class discussions. Try a question tied to this course.";
   }
   setTwinLoading(true);
   setTimeout(() => {

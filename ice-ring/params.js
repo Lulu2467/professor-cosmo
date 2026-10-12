@@ -12,15 +12,17 @@ import { PROJECTS } from "./projects.js?v=89";
  *    rather than just scaled down. Those bands multiply the fit, they do not
  *    replace it, and they stack.
  *
- * Geometry note: the reference ran 18 cards on a 340px ring. This timeline has
- * 12, and a shorter list on the same ring would arrive as a sparse arc with
- * two cards on screen. Radius and stage offset are therefore both scaled by
- * 12/18, which holds the arc spacing — and so the gap between neighbouring
- * cards, which is what the goo is measured against — at the reference value.
+ * Geometry note: the reference ran 18 cards on a 340px ring. This timeline is
+ * tuned for 12. Radius and stage offset scale by count/18 down to that 12, so
+ * the gap between neighbouring cards stays put. A shorter list must not keep
+ * shrinking: four cards on a tiny ring land sideways and upside down in the
+ * middle of the section. Below 12 the ring stays at the 12-card size, and
+ * ring.js parks those cards on the front arc instead of a full circle.
  * posX follows from it: the reference parks the front of the ring on the
  * screen's centre line, i.e. posX = -2 * ringRadius * endScale / refWidth.
  */
-const CARD_RATIO = PROJECTS.length / 18;
+const DESIGN_COUNT = 12;
+const CARD_RATIO = Math.max(PROJECTS.length, DESIGN_COUNT) / 18;
 
 export function defaultParams() {
   return {

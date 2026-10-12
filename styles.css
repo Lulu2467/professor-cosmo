@@ -2459,3 +2459,61 @@ button, textarea { font: inherit; color: inherit; }
     justify-self: start;
   }
 }
+
+.studio-list .onsite-empty {
+  padding: 8px 4px 4px;
+  color: var(--muted, #5c5c5c);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.roster-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px clamp(1.25rem, 5vw, 5.5rem) 80px;
+}
+.roster-main h1 {
+  margin: 0 0 8px;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+.roster-lead {
+  margin: 0 0 28px;
+  max-width: 640px;
+  color: #5c5c5c;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.roster-list {
+  display: grid;
+  gap: 10px;
+}
+.roster-row {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1.1fr) minmax(0, 1.4fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 22px;
+  color: inherit;
+  text-decoration: none;
+}
+.roster-row:hover {
+  box-shadow: 0 24px 50px rgba(10, 10, 10, 0.08);
+}
+.roster-row em {
+  font-style: normal;
+  color: #8a8a8a;
+  font-size: 13px;
+}
+.roster-row b { display: block; font-weight: 600; }
+.roster-row span, .roster-row small { color: #5c5c5c; font-size: 14px; }
+.roster-row small { display: block; margin-top: 2px; }
+@media (max-width: 800px) {
+  .roster-row { grid-template-columns: 28px 1fr; }
+  .roster-row time { grid-column: 2; }
+}

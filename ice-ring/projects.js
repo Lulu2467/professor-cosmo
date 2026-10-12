@@ -3,7 +3,7 @@
 // PHOBOS/CMS collaboration results, and mithig.mit.edu/papers.
 //
 // `href` opens the public paper / arXiv / DOI / profile link directly.
-export const PROJECTS = [
+const BAKED_PROJECTS = [
   {
     id: "phobos-mult-2000",
     name: "Charged Multiplicity",
@@ -125,3 +125,8 @@ export const PROJECTS = [
       "New calorimeter trigger and fast online event selection for high-luminosity LHC heavy-ion running, including Z+jet signatures.",
   },
 ];
+
+export const PROJECTS =
+  typeof window !== "undefined" && Array.isArray(window.ACTIVE_PROJECTS) && window.ACTIVE_PROJECTS.length
+    ? window.ACTIVE_PROJECTS
+    : BAKED_PROJECTS;

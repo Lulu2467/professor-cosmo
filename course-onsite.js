@@ -1,3 +1,4 @@
+(function () {
 const SESSIONS = {
   lab: {
     kind: "Laboratory",
@@ -75,8 +76,10 @@ const SESSIONS = {
   },
 };
 
-const id = new URLSearchParams(location.search).get("id") || "lab";
-const session = SESSIONS[id] || SESSIONS.lab;
+const id = new URLSearchParams(location.search).get("id") || (window.ACTIVE_SLUG ? "none" : "lab");
+const session = window.ACTIVE_SLUG
+  ? (window.ACTIVE_SESSIONS && (window.ACTIVE_SESSIONS[id] || window.ACTIVE_SESSIONS.none))
+  : (SESSIONS[id] || SESSIONS.lab);
 
 const setText = (sel, value) => {
   const el = document.getElementById(sel);
@@ -104,7 +107,7 @@ if (enterBtn) {
   if (label) label.textContent = session.cta;
 }
 
-document.title = `${session.title} - Onsite - Gunther M. Roland`;
+document.title = `${session.title} - Onsite - ${window.TWIN_FULL || "Gunther M. Roland"}`;
 document.body.dataset.onsiteKind = id;
 
 const taskList = document.getElementById("taskList");
@@ -207,3 +210,4 @@ document.getElementById("submitRow")?.addEventListener("click", (e) => {
   }
   toast("Submission flow opened in this prototype.");
 });
+})();
