@@ -281,7 +281,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Sarah Kavanagh on Education policy, Educational equity, Teacher education.",
-    "photo": "assets/portraits/sarah-kavanagh.jpg",
+    "photo": "assets/portraits/sarah-kavanagh.jpg?v=4",
     "template": false
   },
   {
@@ -488,7 +488,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Daniel Casasanto on Cognitive neuroscience, Psycholinguistics, Gesture.",
-    "photo": "assets/portraits/daniel-casasanto.jpg",
+    "photo": "assets/portraits/daniel-casasanto.jpg?v=3",
     "template": false
   },
   {
@@ -551,7 +551,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Vivian Zayas on Personality science, Close relationships, Social cognition.",
-    "photo": "assets/portraits/vivian-zayas.jpg",
+    "photo": "assets/portraits/vivian-zayas.jpg?v=3",
     "template": false
   },
   {
@@ -611,7 +611,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Katherine F. Smith on Planetary health, Biogeography, Environmental change.",
-    "photo": "assets/portraits/katherine-f-smith.jpg",
+    "photo": "assets/portraits/katherine-f-smith.jpg?v=3",
     "template": false
   },
   {
@@ -1232,7 +1232,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with James J. Choi on Biomedical imaging, Drug delivery, Noninvasive devices.",
-    "photo": "assets/portraits/james-j-choi.jpg",
+    "photo": "assets/portraits/james-j-choi.jpg?v=3",
     "template": false
   },
   {
@@ -1714,7 +1714,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Johannes Ruf on Financial mathematics, FinTech, Stochastic analysis.",
-    "photo": "assets/portraits/johannes-ruf.jpg",
+    "photo": "assets/portraits/johannes-ruf.jpg?v=3",
     "template": false
   },
   {
@@ -1854,7 +1854,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Raghavendra Rau on Financial valuation, Corporate finance, Asset pricing.",
-    "photo": "assets/portraits/raghavendra-rau.jpg",
+    "photo": "assets/portraits/raghavendra-rau.jpg?v=3",
     "template": false
   },
   {
@@ -1994,7 +1994,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Donald Robertson on Causal inference, Econometrics, Policy analysis.",
-    "photo": "assets/portraits/donald-robertson.jpg",
+    "photo": "assets/portraits/donald-robertson.jpg?v=3",
     "template": false
   }
 ];

@@ -1189,30 +1189,54 @@ export function createRing(refs, options = {}) {
 
     // Absolute positions from here, so the stage can be dropped anywhere
     // inside the spread rather than only after it.
+    const count = Math.round(params.count);
+    const sparse = count < DESIGN_COUNT;
     const spreadStart = tl.duration() - 0.15;
-    tl.to(
-      state,
-      { spread: 1, duration: params.spreadTime, ease: params.spreadEase },
-      spreadStart,
-    );
+    // A short list only occupies a front arc. Unfurling that arc while the
+    // ring is still centred paints a loose curve beside the heading. Park the
+    // stack first, then peel the cards at the front.
+    const spreadDur = sparse
+      ? Math.min(1.45, 0.8 + count * 0.12)
+      : params.spreadTime;
+    let stageStart;
+    if (sparse) {
+      stageStart = spreadStart;
+      tl.to(
+        state,
+        { shift: 1, duration: params.moveTime, ease: params.moveEase },
+        stageStart,
+      );
+      tl.to(
+        state,
+        { spread: 1, duration: spreadDur, ease: params.spreadEase },
+        stageStart + params.moveTime * 0.55,
+      );
+    } else {
+      tl.to(
+        state,
+        { spread: 1, duration: spreadDur, ease: params.spreadEase },
+        spreadStart,
+      );
+      stageStart = spreadStart + params.stageAt * spreadDur;
+      tl.to(
+        state,
+        {
+          spin: params.spinTurns * TAU,
+          duration: params.spinTime,
+          ease: params.spinEase,
+        },
+        stageStart + params.spinDelay,
+      );
+      tl.to(
+        state,
+        { shift: 1, duration: params.moveTime, ease: params.moveEase },
+        stageStart + params.moveDelay,
+      );
+    }
 
-    const stageStart = spreadStart + params.stageAt * params.spreadTime;
-    tl.to(
-      state,
-      {
-        spin: params.spinTurns * TAU,
-        duration: params.spinTime,
-        ease: params.spinEase,
-      },
-      stageStart + params.spinDelay,
-    );
-    tl.to(
-      state,
-      { shift: 1, duration: params.moveTime, ease: params.moveEase },
-      stageStart + params.moveDelay,
-    );
-
-    const textStart = spreadStart + params.textAt * params.spreadTime;
+    const textStart = sparse
+      ? stageStart + params.moveTime * 0.35
+      : spreadStart + params.textAt * spreadDur;
 
     if (splitText.chars.length) {
       tl.fromTo(
@@ -1232,10 +1256,12 @@ export function createRing(refs, options = {}) {
     // then on it is behind the front card. Timed off whichever staging move
     // finishes last, so it still lands with them if either is retimed.
     if (params.textOut && splitText.fades.length) {
-      const landed = Math.max(
-        stageStart + params.spinDelay + params.spinTime,
-        stageStart + params.moveDelay + params.moveTime,
-      );
+      const landed = sparse
+        ? stageStart + params.moveTime * 0.55 + spreadDur
+        : Math.max(
+            stageStart + params.spinDelay + params.spinTime,
+            stageStart + params.moveDelay + params.moveTime,
+          );
       tl.fromTo(
         splitText.fades,
         { value: 1 },
