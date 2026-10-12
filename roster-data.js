@@ -551,7 +551,7 @@ window.LECTURE_ROSTER = [
       }
     ],
     "joinCopy": "Work with Vivian Zayas on Personality science, Close relationships, Social cognition.",
-    "photo": "assets/portraits/vivian-zayas.jpg?v=4",
+    "photo": "assets/portraits/vivian-zayas.jpg?v=5",
     "template": false
   },
   {
