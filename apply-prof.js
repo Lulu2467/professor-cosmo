@@ -19,7 +19,8 @@ function svgPortrait(initials, round) {
 function mapProfessorNavigation(profile) {
   const resolver = window.resolveProfessorMapRoute;
   const anchors = [...document.querySelectorAll("a[data-professor-route]")].filter((anchor) => anchor.hasAttribute("href"));
-  if (!profile?.courseCode || typeof resolver !== "function" || !anchors.length) return;
+  const cards = [...document.querySelectorAll("[data-professor-card-route]")];
+  if (!profile?.courseCode || typeof resolver !== "function" || (!anchors.length && !cards.length)) return;
 
   const controller = new AbortController();
   const timeout = window.setTimeout(() => controller.abort(), 1500);
@@ -49,6 +50,53 @@ function mapProfessorNavigation(profile) {
     anchors.forEach((anchor) => {
       const destination = destinationFor(anchor, map);
       if (destination) anchor.setAttribute("href", destination);
+    });
+    cards.forEach((card) => {
+      const destination = resolver(map, profile.courseCode, card.dataset.professorCardRoute);
+      if (!destination) return;
+      card.dataset.professorCardHref = destination;
+      card.setAttribute("role", "link");
+      card.setAttribute("tabindex", "0");
+      const label = card.querySelector("h2")?.textContent?.trim() || "In person";
+      card.setAttribute("aria-label", `${label} — Onsite`);
+
+      const hasSelection = () => {
+        const selection = window.getSelection();
+        if (!selection || selection.isCollapsed || !selection.toString()) return false;
+        for (let index = 0; index < selection.rangeCount; index += 1) {
+          if (selection.getRangeAt(index).intersectsNode(card)) return true;
+        }
+        return false;
+      };
+      const isInnerControl = (event) => {
+        const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+        const control = target?.closest("a, button, input, select, textarea, summary, [role='button'], [contenteditable='true']");
+        return Boolean(control && card.contains(control));
+      };
+      const openDestination = (event, newTab = false) => {
+        if (event.defaultPrevented || isInnerControl(event) || hasSelection()) return;
+        if (event.type === "keydown") event.preventDefault();
+        if (newTab) {
+          event.preventDefault();
+          window.open(destination, "_blank", "noopener");
+          return;
+        }
+        window.location.assign(destination);
+      };
+      card.classList.add("has-professor-card-route");
+      card.addEventListener("click", (event) => {
+        if (event.button !== 0 || event.altKey) return;
+        openDestination(event, event.metaKey || event.ctrlKey || event.shiftKey);
+      });
+      card.addEventListener("auxclick", (event) => {
+        if (event.button !== 1) return;
+        openDestination(event, true);
+      });
+      card.addEventListener("keydown", (event) => {
+        if (event.target !== card || event.key !== "Enter") return;
+        if (event.altKey) return;
+        openDestination(event, event.metaKey || event.ctrlKey || event.shiftKey);
+      });
     });
     ready = true;
   });
