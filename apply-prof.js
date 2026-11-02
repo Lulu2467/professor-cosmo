@@ -16,13 +16,55 @@ function svgPortrait(initials, round) {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
+function mapProfessorNavigation(profile) {
+  const resolver = window.resolveProfessorMapRoute;
+  const anchors = [...document.querySelectorAll("a[data-professor-route]")].filter((anchor) => anchor.hasAttribute("href"));
+  if (!profile?.courseCode || typeof resolver !== "function" || !anchors.length) return;
+
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 1500);
+  const mapPromise = fetch(new URL("homepage-map.json", document.baseURI), {
+    cache: "force-cache",
+    credentials: "omit",
+    signal: controller.signal,
+  }).then((response) => response.ok ? response.json() : null).catch(() => null).finally(() => window.clearTimeout(timeout));
+  let ready = false;
+
+  const destinationFor = (anchor, map) => resolver(map, profile.courseCode, anchor.dataset.professorRoute);
+  anchors.forEach((anchor) => {
+    const fallback = anchor.getAttribute("href");
+    anchor.addEventListener("click", (event) => {
+      if (ready) return;
+      event.preventDefault();
+      if (anchor.dataset.professorRoutePending === "true") return;
+      anchor.dataset.professorRoutePending = "true";
+      mapPromise.then((map) => {
+        const destination = destinationFor(anchor, map);
+        if (destination || fallback) window.location.assign(destination || fallback);
+      });
+    });
+  });
+
+  mapPromise.then((map) => {
+    anchors.forEach((anchor) => {
+      const destination = destinationFor(anchor, map);
+      if (destination) anchor.setAttribute("href", destination);
+    });
+    ready = true;
+  });
+}
+
 (() => {
   const finish = () => document.documentElement.classList.remove("prof-pending");
   try {
     const slug = new URLSearchParams(location.search).get("p");
     const roster = window.LECTURE_ROSTER || [];
     const prof = slug && slug !== "gunther-roland" ? roster.find((p) => p.slug === slug) : null;
-    if (!prof) return;
+    const routeProf = prof || (!slug || slug === "gunther-roland" ? roster.find((p) => p.slug === "gunther-roland") : null);
+    if (!prof) {
+      mapProfessorNavigation(routeProf);
+      return;
+    }
 
     window.ACTIVE_SLUG = prof.slug;
     window.TWIN_FULL = prof.name;
@@ -170,7 +212,7 @@ function svgPortrait(initials, round) {
       if (kicker) kicker.textContent = `01 / Online · ${prof.schoolShort}`;
       const intro = onlineList.parentElement.querySelector("header p:last-child");
       if (intro) intro.textContent = `${prof.name}'s October lecture: ${prof.courseEn}.`;
-      onlineList.innerHTML = `<li><a class="course-entry" href="class-recorded.html?id=lecture&p=${encodeURIComponent(prof.slug)}"><div><em>Live</em><b></b><span>Online Lecture (Live)</span></div><time>October 2026</time><span class="entry-go" aria-hidden="true">${ARROW}</span></a></li>`;
+      onlineList.innerHTML = `<li><a class="course-entry" href="class-recorded.html?id=lecture&p=${encodeURIComponent(prof.slug)}" data-professor-route="classRecorded"><div><em>Live</em><b></b><span>Online Lecture (Live)</span></div><time>October 2026</time><span class="entry-go" aria-hidden="true">${ARROW}</span></a></li>`;
       onlineList.querySelector("b").textContent = prof.courseEn;
     }
     const onsite = document.querySelector(".studio-panel.onsite");
@@ -180,7 +222,7 @@ function svgPortrait(initials, round) {
       const intro = onsite.querySelector("header p:last-child");
       if (intro) intro.textContent = `${prof.courseEn} has no onsite meetings.`;
       const list = onsite.querySelector(".studio-list");
-      if (list) list.innerHTML = `<li class="onsite-empty">${prof.name} teaches this lecture online.</li>`;
+      if (list) list.innerHTML = `<li class="onsite-empty"><a class="course-entry" data-professor-route="classOnsite" href="class-onsite.html"><div><span>${prof.name} teaches this lecture online.</span></div><span class="entry-go" aria-hidden="true">${ARROW}</span></a></li>`;
     }
 
     const joinHeading = document.getElementById("joinHeading");
@@ -247,6 +289,7 @@ function svgPortrait(initials, round) {
       const file = url.pathname.split("/").pop();
       a.setAttribute("href", `${file}${url.search}${url.hash}`);
     });
+    mapProfessorNavigation(routeProf);
   } finally {
     finish();
   }
