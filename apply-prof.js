@@ -180,7 +180,18 @@ function svgPortrait(initials, round) {
       const intro = onsite.querySelector("header p:last-child");
       if (intro) intro.textContent = `${prof.courseEn} has no onsite meetings.`;
       const list = onsite.querySelector(".studio-list");
-      if (list) list.innerHTML = `<li class="onsite-empty">${prof.name} teaches this lecture online.</li>`;
+      if (list) {
+        list.innerHTML = `<li class="onsite-empty">${prof.name} teaches this lecture online.</li>`;
+        if (prof.slug === "vivian-zayas") {
+          onsite.classList.add("has-coming-soon");
+          const stage = document.createElement("div");
+          stage.className = "onsite-coming-soon-stage";
+          const message = document.createElement("div");
+          message.textContent = "Coming soon";
+          stage.append(message);
+          list.before(stage);
+        }
+      }
     }
 
     const joinHeading = document.getElementById("joinHeading");
