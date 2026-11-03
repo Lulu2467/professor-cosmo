@@ -187,7 +187,6 @@ function svgPortrait(initials, round) {
           const stage = document.createElement("div");
           stage.className = "onsite-coming-soon-stage";
           const message = document.createElement("div");
-          message.className = "onsite-coming-soon";
           message.textContent = "Coming soon";
           stage.append(message);
           list.before(stage);
